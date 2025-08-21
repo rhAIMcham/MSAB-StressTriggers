@@ -140,6 +140,9 @@ button:hover {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
+  width: 400px;
+    margin: auto;
+    padding-top: 40px;
 }
 .labelSmall {
   display: none;
@@ -158,15 +161,16 @@ legend {
 .labelSmall {
   display: none;
 }
-.hiddenButton {
-  display: none;
-}
 }
  @media screen and (max-width: 300px) {
 form {
   display: none;
 }
 .buttonBar {
+display: none;
+}
+
+#results {
   display: none;
 }
 .cardResults {
@@ -182,9 +186,6 @@ form {
   margin: auto;
   border-radius: 8px;
 }
-.hiddenButton {
-  display: none;
-}
    .labelSmall > p {
      padding: 50px 20px;
    }
@@ -193,8 +194,8 @@ form {
 </head>
 <body>
 <div class="containment">
-  <div id="labelText" class="labelSmall">
-    <p>View this form fullscreen to submit your answers.</p>
+  <div class="labelSmall">
+    <p id="labelText">View this form fullscreen to submit your answers.</p>
   </div>
 <form name="Employment Stress" onsubmit="return false" onchange="calculate(this)">
  <fieldset>
@@ -203,8 +204,8 @@ form {
    <div class="formContainer">
      <div class="checkContainer">
           
-  <h3>Read the following statements and indicate which are key triggers for you.</h3>
-       <h3>NO / YES</h3>
+  <h4>I indicate which pf the below are key triggers for you.</h4>
+       <h4>NO / YES</h4>
      </div>
   <!--Check 1-->
      <div class="checkContainer">
@@ -385,25 +386,26 @@ function calculate(form) {
   form.elements.result.value = score;
 }  
 
-function hideButton() {
-var y = document.getElementById("labelText");
-    y.classList.toggle("hiddenButton");
-}
-
+//function hideButton() {
+//var y = document.getElementById("labelText");
+//    y.classList.toggle("hiddenButton");
+//}
+//TODO: Make it remove the labelText permanently - maybe I should just apply the results to the label text!?
 
  function show() {
   var x = Number(document.getElementById("numericalResult").value);
   var y = document.getElementById("results");
+  var z = document.getElementById("labelText");
   console.log(x);
 
   if (x <= 3) {
-     y.innerHTML = 'You scored between 0 and 3. You are likely more exhausted than stressed – take time to relax.';
-  } else if (x > 3 && x < 7) {
-    y.innerHTML = 'You scored between 4 and 6. You are likely beginning to stress out – heed the warning signs.';
-  } else if (x > 6 && x < 10) {
-    y.innerHTML = 'You scored between 7 and 9. You are possibly stressed out – intervention is required.';
-  } else { (x > 9) 
-    y.innerHTML = 'You scored between 10 and 12. You are probably stressed out – a stress management strategy is needed now.';
+     y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. It seems that employment stress triggers are under control!';
+  } else if (x > 3 && x <= 5) {
+    y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Employment stress is present but not overwhelming.';
+  } else if (x > 5 && x < 9) {
+   y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Employment stress is becoming a significant issue.';
+  } else if (x >= 9) {
+    y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Employment stress is critically high.';
   }
 }
 </script>
