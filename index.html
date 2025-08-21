@@ -146,7 +146,9 @@ button:hover {
 legend {
   font-size: 2rem;
 }
-
+.cardResults {
+  display: none;
+}
    @media screen and (max-width: 800px) {
 .buttonBar {
   display: flex;
@@ -159,6 +161,12 @@ legend {
  @media screen and (max-width: 300px) {
 form {
   display: none;
+}
+.buttonBar {
+  display: none;
+}
+.cardResults {
+  display: block;
 }
 .labelSmall {
   width: fit-content;
@@ -342,7 +350,7 @@ form {
        <span class="slider round"></span></label></div>-->
    </div>
   
-  <p style="display:none;">Total:<output name=result id="numericalResult"></output></p>
+  <p class="cardResults">Total:<output name=result id="numericalResult"></output></p>
  </fieldset>
   
  <script>
