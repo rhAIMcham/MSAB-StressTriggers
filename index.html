@@ -186,7 +186,7 @@ form {
 <body>
 <div class="containment">
   <div class="labelSmall">
-    <p>View this form fullscreen to submit your answers.</p>
+    <p id="labelText">View this form fullscreen to submit your answers.</p>
   </div>
 <form name="Employment Stress" onsubmit="return false" onchange="calculate(this)">
  <fieldset>
@@ -368,7 +368,7 @@ form {
 function calculate(form) {
   const checkNames = [
     'one', 'two', 'three', 'four', 'five', 'six',
-    'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'
+    'seven', 'eight', 'nine', 'ten'
   ];
   let score = 0;
   checkNames.forEach(name => {
@@ -379,7 +379,9 @@ function calculate(form) {
 
 function hideButton() {
 var z = document.getElementById("hideMe");
+var y = document.getElementById("labelText");
   z.classList.toggle("hiddenButton");
+    y.classList.toggle("hiddenButton");
 }
 
 
