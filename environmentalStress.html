@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>Employment Stress</title>
+  <title>Environmental Stress</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -197,11 +197,11 @@ display: none;
 <body>
 <div class="containment">
   <div class="labelSmall">
-    <p id="labelText">Employment Stress Triggers</p>
+    <p id="labelText">Environmental Stress Triggers</p>
   </div>
-<form name="Employment Stress" onsubmit="return false" onchange="calculate(this)">
+<form name="Environmental Stress" onsubmit="return false" onchange="calculate(this)">
  <fieldset>
-  <legend>Employment Stress</legend>
+  <legend>Environmental Stress</legend>
 
    <div class="formContainer">
      <div class="checkContainer">
@@ -211,7 +211,7 @@ display: none;
      </div>
   <!--Check 1-->
      <div class="checkContainer">
-     <p label="question1">Unrealistic deadlines or excessive workload
+     <p label="question1">Noise pollution, e.g. traffic, construction near home
     </p>
    <label class="switch">
         <input
@@ -224,7 +224,7 @@ display: none;
    
   <!--Check 2-->
    <div class="checkContainer">
-   <p>Lack of job security or fear of redundancy
+   <p>Overcrowded living conditions or lack of privacy
      </p>
    <label class="switch">
         <input 
@@ -237,7 +237,7 @@ display: none;
   
    <!--Check 3-->
    <div class="checkContainer">
-   <p>Poor management or unclear leadership direction
+   <p>Poor air quality or pollution exposure
    </p>
       <label class="switch">
         <input 
@@ -250,7 +250,7 @@ display: none;
   
    <!--Check 4-->
    <div class="checkContainer">
-   <p>Micromanagement or lack of autonomy
+   <p>Extreme weather events, e.g. heatwaves, floods
      </p>
    <label class="switch">
         <input
@@ -263,7 +263,7 @@ display: none;
   
    <!--Check 5-->
    <div class="checkContainer">
-   <p>Conflicts with colleagues or managers
+   <p>Unsafe neighbourhood or concerns about personal safety
      </p>
      <label class="switch">
         <input
@@ -276,7 +276,7 @@ display: none;
        
    <!--Check 6-->
    <div class="checkContainer">
-   <p>Lack of recognition or feeling undervalued
+   <p>Lack of access to green space or natural environments
      </p>
      <label class="switch">
         <input
@@ -289,7 +289,7 @@ display: none;
        
    <!--Check 7-->
    <div class="checkContainer">
-   <p>Limited career progression or unclear development paths</p>
+   <p>Long or difficult commutes in traffic or public transport</p>
      <label class="switch">
         <input
         type="checkbox"
@@ -301,7 +301,7 @@ display: none;
        
    <!--Check 8-->
    <div class="checkContainer">
-   <p>Unmanageable work-life balance, e.g., working long hours</p>
+   <p>Cluttered, disorganised or chaotic home/workspaces</p>
      <label class="switch">
         <input
         type="checkbox"
@@ -313,7 +313,7 @@ display: none;
           
    <!--Check 9-->
    <div class="checkContainer">
-   <p>Constant change in priorities, direction, or structure</p>
+   <p>Overuse of screens or digital overload</p>
      <label class="switch">
         <input
         type="checkbox"
@@ -325,7 +325,7 @@ display: none;
           
    <!--Check 10-->
    <div class="checkContainer">
-   <p>High-stakes responsibility with little support or resources</p>
+   <p>Constant disruptions in remote working environments</p>
      <label class="switch">
         <input
         type="checkbox"
@@ -334,31 +334,6 @@ display: none;
         autocomplete="off"
         unchecked>
        <span class="slider round"></span></label></div>
-   
-     <!--Check 11-->
-     <!--
-   <div class="checkContainer">
-   <p>I don’t seem to have much fun anymore</p>
-     <label class="switch">
-        <input
-        type="checkbox"
-        role="switch"
-        name=eleven
-        autocomplete="off"
-        unchecked>
-       <span class="slider round"></span></label></div>-->
-   
-      <!--Check 12-->
-   <!--<div class="checkContainer">
-     <p>I find it more and more difficult to see people socially</p>
-     <label class="switch">
-        <input
-        type="checkbox"
-        role="switch"
-        name=twelve
-        autocomplete="off"
-        unchecked>
-       <span class="slider round"></span></label></div>-->
    </div>
   
   <p class="cardResults">Total:<output name=result id="numericalResult"></output></p>
@@ -401,13 +376,13 @@ function calculate(form) {
   console.log(x);
 
   if (x <= 3) {
-     y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. It seems that employment stress triggers are under control!';
+     y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. It seems that financial stress triggers are under control!';
   } else if (x > 3 && x <= 5) {
-    y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Employment stress is present but not overwhelming.';
+    y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Financial stress is present but not overwhelming.';
   } else if (x > 5 && x < 9) {
-   y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Employment stress is becoming a significant issue.';
+   y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Financial stress is becoming a significant issue.';
   } else if (x >= 9) {
-    y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Employment stress is critically high.';
+    y.innerHTML = z.innerHTML = 'You scored ' + x + '0%. Financial stress is critically high.';
   }
 }
 </script>
